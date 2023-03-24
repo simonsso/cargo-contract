@@ -19,7 +19,7 @@ jobs:
         with:
           path: "examples/hello"
       - name: Build and Test simple-timed-lock
-        uses: simonsso/cargo-contract@master
+        uses: simonsso/cargo-contract@${GITHUB_SHA}
         with:
           cargo-cmd: "cargo +nightly contract build --verbose"
       - name: Upload artifacts
