@@ -3,12 +3,9 @@ name: 'cargo contracts'
 description: 'Cargo command wrapper'
 inputs:
   cargo-cmd:  # id of input
-    description: 'Who to greet'
+    description: 'Cargo command'
     required: true
     default: 'cargo --version'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
   using: 'docker'
   image: 'Dockerfile'
