@@ -1,0 +1,31 @@
+name: Build and Test Smart Contracts
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      RUST_BACKTRACE: full
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          path: "examples/hello"
+      - name: Build and Test simple-timed-lock
+        uses: simonsso/cargo-contract@master
+        with:
+          cargo-cmd: "cargo +nightly contract build --verbose"
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: contracts
+          path: |
+             target/ink/**/*.contract
+             toolversions
