@@ -18,14 +18,13 @@ jobs:
       - uses: actions/checkout@v3
         with:
           path: "examples/hello"
-      - name: Build and Test simple-timed-lock
+      - name: Build hello contract
         uses: simonsso/cargo-contract@master
         with:
-          cargo-cmd: "cargo +nightly contract build --verbose"
+          cargo-cmd: "cargo contract build --verbose"
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: contracts
           path: |
              target/ink/**/*.contract
-             toolversions
