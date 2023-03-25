@@ -17,14 +17,15 @@ jobs:
     steps:
       - name: SHA
         run: |
-          echo GIT: ${GITHUB_SHA}
+          echo GIT: ${GITHUB_SHA} ${GITHUB_HEAD_REF}
+          export
       - uses: actions/checkout@v3
         with:
           path: "examples/hello"
-      - name: Build hello contract
-        uses: simonsso/cargo-contract@tryci
-        with:
-          cargo-cmd: cargo contract build --verbose
+      # - name: Build hello contract
+      #   uses: simonsso/cargo-contract@tryci
+      #   with:
+      #     cargo-cmd: cargo contract build --verbose
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
