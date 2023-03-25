@@ -21,7 +21,7 @@ jobs:
       - name: Build hello contract
         uses: simonsso/cargo-contract@master
         with:
-          cargo-cmd: "cargo contract build --verbose"
+          cargo-cmd: cargo contract build --verbose
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
