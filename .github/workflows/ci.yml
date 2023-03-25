@@ -15,11 +15,14 @@ jobs:
     env:
       RUST_BACKTRACE: full
     steps:
+      - name: SHA
+        run: |
+          echo GIT: ${GITHUB_SHA}
       - uses: actions/checkout@v3
         with:
           path: "examples/hello"
       - name: Build hello contract
-        uses: simonsso/cargo-contract@${GITHUB_SHA}
+        uses: simonsso/cargo-contract@tryci
         with:
           cargo-cmd: cargo contract build --verbose
       - name: Upload artifacts
