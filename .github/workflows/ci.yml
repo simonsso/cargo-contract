@@ -21,7 +21,7 @@ jobs:
       - name: Build hello contract
         uses: simonsso/cargo-contract@tryci
         with:
-          cargo-cmd: cargo contract build --verbose
+          cargo-cmd: build
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:

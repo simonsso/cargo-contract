@@ -5,9 +5,9 @@ inputs:
   cargo-cmd:  # id of input
     description: 'Cargo command'
     required: true
-    default: 'cargo --version'
+    default: 'build'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.cargo-cmd }}
+    - cargo contract ${{ inputs.cargo-cmd }}
