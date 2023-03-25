@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: SHA
         run: |
-          echo GIT: ${GITHUB_SHA} ${GITHUB_HEAD_REF}
+          echo GIT: ${GITHUB_SHA} ${GITHUB_HEAD_REF} ${{ github.event.pull_request.head.sha }}
           export
       - uses: actions/checkout@v3
         with:
