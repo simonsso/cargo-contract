@@ -19,7 +19,7 @@ jobs:
         with:
           path: "examples/hello"
       - name: Build hello contract
-        uses: simonsso/cargo-contract@${{ github.event.pull_request.head.sha }}
+        uses: simonsso/cargo-contract@${GITHUB_HEAD_REF}
         with:
           cargo-cmd: cargo contract build --verbose
       - name: Upload artifacts
