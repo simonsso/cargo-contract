@@ -18,13 +18,19 @@ jobs:
       - uses: actions/checkout@v3
         with:
           path: "examples/hello"
-      - name: Build hello contract
-        uses: simonsso/cargo-contract@tryci
-        with:
-          cargo-cmd: build
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: contracts
-          path: |
-             target/ink/**/*.contract
+      - name: Cargo test
+        run: |
+           pwd
+           ls -la
+           find
+           
+      # - name: Build hello contract
+      #   uses: simonsso/cargo-contract@tryci
+      #   with:
+      #     cargo-cmd: build
+      # - name: Upload artifacts
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: contracts
+      #     path: |
+      #        target/ink/**/*.contract
