@@ -16,9 +16,8 @@ jobs:
       RUST_BACKTRACE: full
     steps:
       - uses: actions/checkout@v3
-        with:
-          path: "examples/hello"
       - name: Cargo test
+        working-directory: examples/hello
         run: |
            pwd
            ls -la
