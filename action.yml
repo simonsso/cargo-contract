@@ -10,4 +10,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - cargo contract ${{ inputs.cargo-cmd }}
+    - ${{ inputs.cargo-cmd }}
