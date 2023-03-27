@@ -5,9 +5,14 @@ inputs:
   cargo-cmd:  # id of input
     description: 'Cargo command'
     required: true
-    default: 'cargo --version'
+    default: 'build'
+  working-directory:
+    description: 'default work dir'
+    required: true
+    default: '.'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.cargo-cmd }}
+    - ${{inputs.working-directory}}
+    - ${{inputs.cargo-cmd}}
