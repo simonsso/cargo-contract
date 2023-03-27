@@ -22,6 +22,10 @@ jobs:
             simonsson/cargo-contract
           # generate Docker tags based on the following events/attributes
           tags: |
+            # minimal
+            type=match,pattern=s(\d.\d.\d)
+            # define match group
+            type=match,pattern=s(.*),group=1
             type=schedule
             type=ref,event=branch
             type=ref,event=pr
