@@ -12,7 +12,7 @@ inputs:
     default: '.'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'simonsson/cargo-contract'
   args:
     - ${{inputs.working-directory}}
     - ${{inputs.cargo-cmd}}
