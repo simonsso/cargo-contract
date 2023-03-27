@@ -14,4 +14,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{inputs.working-directory}} ${{ inputs.cargo-cmd }}
+    - ${{inputs.working-directory}}
+    - ${{inputs.cargo-cmd}}
